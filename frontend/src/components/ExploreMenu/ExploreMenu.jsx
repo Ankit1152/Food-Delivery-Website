@@ -13,6 +13,7 @@ const ExploreMenu = ({ category, setCategory }) => {
       </p>
       <div className="explore-menu-list">
         {menu_list.map((item, index) => {
+          console.log(item);
           return (
             <div
               onClick={() =>
