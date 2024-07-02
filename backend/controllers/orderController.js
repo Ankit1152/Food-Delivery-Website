@@ -2,7 +2,7 @@ import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.STRIPE_SECRET_API_KEY);
 
 // placing order from the user
 const placeOrder = async (req, res) => {
@@ -53,6 +53,9 @@ const placeOrder = async (req, res) => {
   }
 };
 
-export { placeOrder };
+const verifyOrder = async (req, res) => {
+  const { orderId, success } = req.body;
+  // Resume 08 : 32
+};
 
-// Resume 08: 04     we will link the this placeorderurl from frontend
+export { placeOrder, verifyOrder };
